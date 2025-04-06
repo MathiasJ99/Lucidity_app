@@ -1,17 +1,18 @@
 GENERAL INTRO
 --------------
-This is a RESTful Web app that allows users to submit applications for trademarks
+This is a RESTful Web app that allows users to submit applications for trademarks.
 
 front-end: boostrap, JS, HTML, CSS
+
 back-end: sqlite, python, flask, sqlalchemy, stripe API
 
 
 
 TESTING -- APP
 -----------
-1. first activate env by:   venv/Scripts/activate 
-2. navigate to folder by doing: cd Lucidity_app
-3. Run app by doing:  python app.py server run --port=4242
+1. Create .env file in main directory
+1. Activate local env by:   venv/Scripts/activate 
+2. Run app by doing:  python app.py server run --port=4242
 
 TESTING -- PAYMENTS
 -----------
