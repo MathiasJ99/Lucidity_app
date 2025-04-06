@@ -27,6 +27,7 @@ TODO
 - customise with colour scheme and name - mathias
 - input sanitisation -mathias
 - encrypt tables -mathias 
+- put database online 
 - put in docker file (optional) -mathias
 - COMMENT CODE
 - buy hosting online 
