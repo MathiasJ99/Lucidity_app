@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/favicon.png') }}">
+  <title>LucidityIP</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/Main.css') }}">
+  
+</head>
+
+  <body>
+    <!-- NAV BAR-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary py-3">
+      <div class="container d-flex flex-wrap justify-content-center">
+        <a class="navbar-brand mb-0 h1" href="#">
+          <img src="{{ url_for('static', filename='img/brand-logo.png') }}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Brand Name </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav nav-fill">
+              <li class="nav-item nav-item-padding">
+                  <a class="nav-link"  href="{{ url_for('main.home')}}">Home</a>
+              </li>
+      
+              <li class="nav-item nav-item-padding">
+                  <a class="nav-link" href="{{url_for('main.why_trademark')}}">Why should I register a trade mark? </a>
+              </li>
+      
+              <li class="nav-item nav-item-padding">
+                  <a class="nav-link" href="{{ url_for('main.our_process')}}">Our Step by Step Process </a>
+              </li>
+      
+             
+          </ul>
+          <span class="navbar-text ms-auto">
+            <div class="d-grid gap-2">
+              <!-- <button type="button" href=add-trademark.html class="btn btn-outline-danger btn-lg">Add Trademark</button> -->
+              <a href="{{ url_for('apply.add_trademark_section_1')}}" class="btn btn-outline-danger btn-lg">Add Trademark</a>
+            </div>
+          </span>
+    </nav>
+    <!-- END OF NAV BAR-->
+
+      <!--HERO-->
+
+      <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold">Step 2) Select Tags and Categories</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4"> Trademarks offer a range of benefits to businesses and individuals by protecting brands, 
+            products, and services. Here’s an overview of the key advantages:</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button type="button" class="btn btn-action1 btn-lg px-4 gap-3">continue below </button>
+          </div>
+        </div>
+    </div>
+    <!-- END OF HERO-->
+
+
+    <!-- FORM section 2-->
+    <div class="container px-4 py-5">
+      {% with messages = get_flashed_messages(with_categories=True) %}
+      {% if messages %}
+          {% for category, message in messages %}
+              <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                  <h4 class="alert-heading">{{ message }}</h4>
+                  <hr>
+                  <p class="mb-0">Please continue with the form below</p>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+      <form action="{{ url_for('apply.add_trademark_section_2')}}" method="POST" id="form-2">
+
+        <label>Search for tags</label>
+        <div class="input-group input-group-lg">
+          <input type="text" id="search-bar" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+          
+          <button class="btn btn-outline-secondary" type="button" onclick=addTag() id="btn-add-tag">Add</button>
+        </div>
+        <div class="container" id="suggestions"></div>
+
+
+        <br>
+        
+
+        <label>Selected Categories and tags</label>
+        
+        <div class="accordion" id="Accordions">
+          
+        </div>
+
+        <br>
+
+        <div  id="cost-card">
+        </div>
+
+        <br>
+
+        <input type="hidden" name="tags" id="tags">
+        
+        <button class="w-100 btn w100 btn-action1 btn-lg px-4 gap-3" type="button"  onclick=submitForm()>Submit</button>
+
+      </form>
+
+
+
+  </div>
+    <!-- END OF FORM-->
+
+
+     <!-- FOOTER-->
+     <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="{{ url_for('main.home')}}" class="nav-link px-2 text-body-secondary">Home</a></li>
+        <li class="nav-item"><a href="{{ url_for('main.why_trademark')}}" class="nav-link px-2 text-body-secondary">Why Should I Register a trade mark</a></li>
+        <li class="nav-item"><a href="{{ url_for('main.our_process')}}" class="nav-link px-2 text-body-secondary">Our Step by Step Process</a></li>
+        <li class="nav-item"><a href="{{url_for('main.terms')}}" class="nav-link px-2 text-body-secondary">Terms of Use</a></li>
+        <li class="nav-item"><a href="{{ url_for('main.privacy_policy')}}" class="nav-link px-2 text-body-secondary">Privacy Policy</a></li>
+      </ul>
+      <p class="text-center text-body-secondary">© 2024 Company, Inc</p>
+    </footer>
+    <!-- END OF FOOTER-->
+
+    
+    <!-- SCRIPTS-->
+    
+    <script src="{{ url_for('static', filename='scripts/Search.js')}} "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+
+
+</html>

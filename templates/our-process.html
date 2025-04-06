@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/favicon.png') }}">
+      <title>LucidityIP</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      <link rel="stylesheet" href="{{ url_for('static', filename='styles/Main.css') }}">
+      
+  </head>
+
+  <body>
+    <!-- NAV BAR-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary py-3">
+      <div class="container d-flex flex-wrap justify-content-center">
+        <a class="navbar-brand mb-0 h1" href="#">
+          <img src="{{ url_for('static', filename='img/brand-logo.png') }}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Brand Name </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav nav-fill ">
+              <li class="nav-item nav-item-padding">
+                  <a class="nav-link " href="{{ url_for('main.home')}}">Home</a>
+              </li>
+      
+              <li class="nav-item nav-item-padding">
+                  <a class="nav-link" href="{{url_for('main.why_trademark')}}">Why should I register a trade mark? </a>
+              </li>
+      
+              <li class="nav-item nav-item-padding">
+                  <a class="nav-link active" aria-current="page" href="{{ url_for('main.our_process')}}"> <b>Our Step by Step Process</b> </a>
+              </li>
+      
+          </ul>
+          <span class="navbar-text ms-auto">
+            <div class="d-grid gap-2">
+              <!-- <button type="button" href=add-trademark.html class="btn btn-outline-danger btn-lg">Add Trademark</button> -->
+              <a href="{{ url_for('apply.add_trademark_section_1')}}" class="btn btn-outline-danger btn-lg">Add Trademark</a>
+            </div>
+          </span>
+    </nav>
+    <!-- END OF NAV BAR-->
+
+     <!--HERO-->
+
+     <div class="px-4 py-5 my-5 text-center">
+      <h1 class="display-5 fw-bold">Our step by step process.</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4"> Look below to see the 4 simple steps in our process</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <button type="button" class="btn  btn-action1 btn-lg px-4 gap-3">Read More </button>
+        </div>
+        </div>
+    </div>
+    <!-- END OF HERO-->
+
+
+    <!-- TEXT BLOCK-->
+    <div class="container px-4 py-5 custom-list">
+      <ol>
+          <li><h1>Decide what you want to trademark</h1>
+              <p>
+                With PLACEHOLDER, you can apply for two common trademark types: word trademarks or image trademarks. 
+                These can be individual words, phrases, slogans, logos, stylised words, or any combination of these. 
+                Images will need to be uploaded in JPG format. 
+              </p>
+              <p> Top Tips</p>
+              <ul>
+                <li>
+                  Be unique! Your trademark cannot describe the goods or services it will relate to, for example the word
+                 ‘textile’ cannot be a trade mark for a textile company. Made up words, words that are completely unrelated to the
+                  goods or services, and highly stylised logo designs often face less difficulties in being registered.
+                </li>
+              
+                <li>
+                  Your trademark cannot be offensive or misleading, for example using swear words or using the word ‘organic’ for
+                  goods that are not organic.
+                </li>
+                <li>
+                  Avoid overly common and non-distinctive text, for example a statement like ‘we are experts’.
+                </li>
+                <li>
+                  You may not be able to register your trade mark if it’s the same as, or similar to, a trade mark of another business that sells the same goods or services.
+                </li>
+              </ul>
+              <p>Contact us if you need any further guidance on any of the above!</p>
+          </li>
+         
+
+          <li><h1>Decide what goods and services you wish to include in your registration</h1>
+            <p>When applying for a trademark, you’ll need to use the classification system to specify the goods and/or services 
+              associated with it. </p>
+            <p>Our AI powered UK trademark classification search software suggests the most appropriate products and services for
+               your application, making the process quick, simple and hassle-free. </p>
+            <p>Top Tips </p>
+            <ul>
+              <li>Consider the question 'what do people pay your business for?’. Just because your business involves certain products
+                 or services doesn’t mean that you are providing them commercially under your trademark. For example, if you sell 
+                 sports clothing via your website, you do not need to cover “e-commerce software” but instead you need to focus on 
+                 “sports clothing” and similar. </li>
+              <li>What goods do you currently sell, or are intending to sell in the future? We recommend that your specification 
+                covers all the goods or services you plan to offer within the next five years. </li>
+              <li>Cover a combination of suitable specific terms and more general terms. For example, if your business is a design 
+                consultancy, in addition to ‘design services’, consider also including more specific services that your business
+                 may provide such as ‘graphic design’, ‘website design’, or ‘product design’. </li>
+            </ul>
+
+          </li>
+          
+          <li><h1>Provide details of the trademark owner</h1>
+            <p>You will need to provide the full name of the owner (individual or business) and also the full address.
+               If you are the director of a business filing a new trade mark application relating to the business, 
+               we would recommend having the business as the owner of the trade mark.  </p>
+          </li>
+
+          <li><h1>Confirm and pay</h1>
+            <p>
+              You will be able to review all the details of the new trade mark application and pay securely online through 
+              the Stripe online payment software. 
+            </p>
+
+            <p>Following this, you will receive email confirmation of your order and then your trademark application will be
+               filed within 48 hours. You will receive email confirmation of your trademark application having been filed and 
+               you will receive any updates along the way to registration. If any issues or objections arise, we will aim to assist you wherever possible, free of charge. </p>
+          </li>
+
+        </ol>
+
+    </div>
+
+    <!-- END OF TEXT BLOCK-->
+    
+
+     <!-- FOOTER-->
+     <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="{{ url_for('main.home')}}" class="nav-link px-2 text-body-secondary">Home</a></li>
+        <li class="nav-item"><a href="{{ url_for('main.why_trademark')}}" class="nav-link px-2 text-body-secondary">Why Should I Register a trade mark</a></li>
+        <li class="nav-item"><a href="{{ url_for('main.our_process')}}" class="nav-link px-2 text-body-secondary">Our Step by Step Process</a></li>
+        <li class="nav-item"><a href="{{url_for('main.terms')}}" class="nav-link px-2 text-body-secondary">Terms of Use</a></li>
+        <li class="nav-item"><a href="{{ url_for('main.privacy_policy')}}" class="nav-link px-2 text-body-secondary">Privacy Policy</a></li>
+      </ul>
+      <p class="text-center text-body-secondary">© 2024 Company, Inc</p>
+    </footer>
+    <!-- END OF FOOTER-->
+
+    
+    <!-- SCRIPTS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+
+
+</html>

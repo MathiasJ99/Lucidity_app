@@ -1,0 +1,207 @@
+/* CSS vars */
+:root {
+    --clr1: #F5F3F4;
+    --clr2: #B1A7A6;
+    --clr3: #A4161A;
+    --clr4: #660708;
+    --clr5: #161A1D;
+    --clr6: #0B090A;
+
+    --background-color: #fff;
+    --text-color: #333;
+    --div-background-color: #fff;
+
+    --fs-2xs: 0.25rem;
+    --fs-xs: 0.5rem;
+    --fs-sm: 0.75rem;
+    --fs-md: 1rem;
+    --fs-rg: 1.25rem;
+    --fs-lg: 1.5rem;
+    --fs-2xl: 1.75rem;
+    --fs-3xl: 2rem;
+    --fs-4xl: 2.5rem;
+    --fs-5xl: 3rem;
+    --fs-6xl: 3.5rem;
+    --fs-7xl: 4rem;
+    --fs-8xl: 5rem;
+    --fs-10xl: 6rem;
+  
+    --fw-light: 300;
+    --fw-reg: 400;
+    --fw-md: 500;
+    --fw-s-bold: 600;
+    --fw-bold: 700;
+}
+
+/* Main css */
+
+html {
+    scroll-behavior: smooth;
+}
+
+label {
+    font-weight: var(--fw-reg);
+    font-size: var(--fs-lg);
+}
+
+.label-small{
+    font-weight: var(--fw-reg);
+    font-size: var(--fs-rg);
+}
+
+.label-x-small{
+    font-weight: var(--fw-reg);
+    font-size: var(--fs-md);
+}
+h1 {
+    font-size: var(--fs-3xl);
+    font-weight: var(--fw-bold);
+    color: #333;
+}
+  
+h2 {
+font-size: var(--fs-2xl);
+font-weight: var(--fw-s-bold);
+}
+  
+h3 {
+font-size: var(--fs-1xl);
+font-weight: var(--fw-s-bold);
+}
+  
+
+p {
+    color: #666;
+    font-size: var(--fs-rg);
+    font-weight: var(--fw-light);
+}
+
+.badge {
+    margin: 5px;
+  }
+
+.badge-colour{
+    background-color: var(--clr1);
+    color: var(--clr6);
+}
+/* custom components */
+
+.btn-action1{
+    color: var(--clr1);
+    background-color: var(--clr3);
+}
+
+.btn-action1:hover{
+    color: var(--clr1);
+    background-color: var(--clr4);
+}
+
+.nav-item-padding{
+    padding: 1rem;
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--clr6);
+    background-color: var(--clr1);
+}
+
+.accordion-item{
+    margin-bottom: 1rem;
+}
+
+
+.hero{
+/*background */
+}
+
+/* why trademark section */
+.custom-list {
+    counter-reset: list-counter; /* Initialize main counter */
+    padding-left: 0;
+}
+
+.custom-list li {
+    counter-increment: list-counter; /* Increment main counter */
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.custom-list li::before {
+    content: counter(list-counter) ". "; /* Main counter */
+    font-size: var(--fs-3xl);
+    font-weight: var(--fw-bold);
+    margin-right: 10px; /* Add spacing between counter and heading */
+}
+
+.custom-list h1 {
+    display: inline; /* Keep numbering and heading on the same line */
+    font-size: var(--fs-3xl);
+    font-weight: var(--fw-bold);
+    margin: 0; /* Remove default margin for h1 */
+}
+
+/* Sub-list styling */
+.custom-list ul {
+    counter-reset: sub-list-counter; /* Initialize sub-list counter */
+    padding-left: 20px; /* Indent sub-list */
+    margin-top: 10px; /* Add spacing above sub-list */
+}
+
+.custom-list ul li {
+    counter-increment: sub-list-counter; /* Increment sub-list counter */
+    list-style: none;
+    margin-bottom: 10px; /* Adjust spacing for sub-list items */
+    color: #666;
+    font-size: var(--fs-rg);
+    font-weight: var(--fw-light);
+}
+
+.custom-list ul li::before {
+    content: counter(sub-list-counter) ". "; /* Sub-list counter */
+    font-size: var(--fs-rg); /* Smaller font size for sub-list counter */
+    font-weight: var(--fw-bold);
+    margin-right: 10px; /* Add spacing between counter and text */
+}
+
+
+
+/* apply sections */
+
+.form-group {
+    margin-bottom: 1.5rem; /* Equal space above and below each form group */
+}
+
+
+.form-group-last {
+    margin-bottom: 0rem; /* Equal space above and below each form group */
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem; /* Space between label and input */
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: var(--fs-md);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-control-small {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: var(--fs-xs);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.or-separator {
+    font-weight: bold;
+    padding-bottom: 1.5rem;
+}
+
+.form-check-input.is-valid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label {
+    color: var(--clr5);
+}
